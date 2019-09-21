@@ -5,16 +5,48 @@
 </view>
 
 <!-- 地区，更新时间 -->
-<view>
-<view>{{msg.basic.location}}区</view>
-<view>更新时间：{{msg.update.loc}}</view>
+<view class="now">
+    <view class="location">{{msg.basic.location}}区</view>
+    <view class="uptime">{{msg.update.loc}} 更新</view>
+</view>
+
+<!-- 个性化小提示 -->
+<view class="alter">
+下午好，长时间敲代码，会让你的腰间盘更加突出哦
 </view>
 
 <!-- 当前气温详情 -->
-<view>
+<view class="wendu">
+    <view class="fl">
+        <text>{{msg.now.fl}}</text>
+        <text>℃</text>
+    </view>
+    <!-- 各项指标 -->
+    <view class="desc">
+        <view>
+            <view class="item">天气</view>
+            <view class="cell">多云</view>
+        </view>
+        <view>
+            <view class="item">风向</view>
+            <view class="cell">西南风</view>
+        </view>
+        <view>
+            <view class="item">风力</view>
+            <view class="cell">三级</view>
+        </view>
+        <view>
+            <view class="item">湿度</view>
+            <view class="cell">40</view>
+        </view>
+        <!-- <view>风力：{{msg.now.wind_sc}},风向:{{msg.now.wind_dir}}</view>
+        <view>湿度：{{msg.now.hum}}</view> -->
+    </view>
+</view>
 
-<view>当前温度：{{msg.now.fl}}</view>
-<view>℃</view>
-<view>风力：{{msg.now.wind_sc}},风向:{{msg.now.wind_dir}}</view>
-<view>湿度：{{msg.now.hum}}</view>
+<!-- 未来3天的气温预报 -->
+<view class="day">
+    <view class="items">明天</view>
+    <view class="items">后天</view>
+    <view class="items">大后天</view>
 </view>
