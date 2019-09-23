@@ -130,37 +130,31 @@ Page({
     }
 
   },
-  // 在搜索框搜索了一个城市
-  inputCity(e) {
-    this.setData({
-      search: e.detail
+  // 搜索城市页面
+  searchCity(){
+    wx.navigateTo({
+      url:'/pages/cities/cities'
     })
   },
-  // 搜索框失焦，搜索城市
-  searchCity() {
-    console.log("查询城市：", this.data.search);
-    wx.showLoading({
-      title: '查询中...',
-      mask: true,
-      success: () => {
-        
-      }
-    })
-  },
-
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    wx.getLocation({ // 获取位置
-      success: (res) => {
-        this.setData({
-          geo: res
-        });
-        this.getWeatherMsg();
-        this.getWeatherMsg('day')
-      }
-    })
+    if (options.get) {
+      console.log('页面加载时，传入 geo');
+    } else {
+      console.log('页面加载时未传入 geo');
+      wx.getLocation({ // 获取位置
+        success: (res) => {
+          this.setData({
+            geo: res
+          });
+          this.getWeatherMsg();
+          this.getWeatherMsg('day')
+        }
+      })
+    }
+
   },
   /**
    * 从服务端获取天气信息的函数
@@ -175,7 +169,7 @@ Page({
         rtype,
       }
     }).then(r => {
-      console.log('获取天气的类型：',rtype, r);
+      console.log('获取天气的类型：', rtype, r);
       if (rtype) { // rtype进行了传入，预期是获取三天的预告
         this.setData({
           dayMsg: (r.result)[0]
@@ -198,7 +192,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    // 展示时刷新页面天气
+    // 如果是从城市搜索页面回来的，则会更新本业geo对象，刷新为新的地区
+    this.getWeatherMsg();
+    this.getWeatherMsg('day')
   },
 
   /**

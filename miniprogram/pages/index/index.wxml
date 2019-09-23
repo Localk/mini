@@ -1,7 +1,7 @@
 <!-- 定位区域，搜索城市 -->
 <view class="local">
     <image src="/images/index/local.png"></image>
-    <input placeholder="想看看其他城市？搜搜试试" placeholder-style="color:#FFFFFF" bindblur="searchCity" bindinput="inputCity"></input>
+    <text bindtap="searchCity">想看看其他城市？搜搜试试</text>
 </view>
 
 <!-- 地区，更新时间 -->

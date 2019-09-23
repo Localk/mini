@@ -16,7 +16,8 @@ page{
     height:20px;
     margin-right: 20rpx;
 }
-.local input{
+.local text{
+  font-size:18px;
     width: 80%;
     display: inline-block;
     color:rgb(236, 240, 233);
