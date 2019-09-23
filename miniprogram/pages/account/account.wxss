@@ -61,9 +61,10 @@
 .item>view{
     height:150rpx;
 }
-.item .left view{
+.item .left image{
     width:60rpx;
     height:60rpx;
     margin-right:-30rpx;
+    background:rgb(15, 119, 189);
 }
 

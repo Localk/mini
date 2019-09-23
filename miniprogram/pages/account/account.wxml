@@ -35,7 +35,8 @@
         <!-- 具体的条目 -->
         <view class="item">
             <view class="left">
-                <view></view>
+                <!-- <view></view> -->
+                <image src="/images/account/food.png"></image>
             </view>
             <view class="right">
                 xxx 记账：

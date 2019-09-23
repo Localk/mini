@@ -1,7 +1,8 @@
 {
     "pages": [
-        "pages/account/account",
         "pages/index/index",
+        "pages/cities/cities",
+        "pages/account/account",
         "pages/profile/profile"
     ],
     "window": {
